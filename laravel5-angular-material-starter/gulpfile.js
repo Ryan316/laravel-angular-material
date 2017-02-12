@@ -51,7 +51,6 @@ elixir(mix => {
        .webpack('index.main.js', 'public/js/app.js')
        .sass(['**/*.scss', 'critical.scss'], 'public/css')
        .sass('critical.scss', 'public/css/critical.css')
-       .styles(styles, 'public/css/final.css')
        .eslint('angular/**/*.js')
        .combine(scripts, 'public/js/final.js')
        .version(assets)
