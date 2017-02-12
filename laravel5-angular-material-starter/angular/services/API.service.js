@@ -9,7 +9,7 @@ export class APIService {
 
 		return Restangular.withConfig(function(RestangularConfigurer) {
 			RestangularConfigurer
-				.setBaseUrl('https://api.nasa.gov')
+				.setBaseUrl('https://api.nasa.gov/')
 				.setDefaultHeaders(headers)
 				.setErrorInterceptor(function(response) {
 					if (response.status === 422 || response.status === 401) {

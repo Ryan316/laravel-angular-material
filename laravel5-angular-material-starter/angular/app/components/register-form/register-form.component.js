@@ -1,10 +1,8 @@
 class RegisterFormController {
-	constructor(API, $auth, ToastService) {
+	constructor(API) {
 		'ngInject';
 
 		this.API = API;
-		this.$auth = $auth;
-		this.ToastService = ToastService;
 		this.totalImages = [];
 		this.images = [];
 		this.start = 0;
@@ -16,8 +14,7 @@ class RegisterFormController {
             this.totalImages = response.photos;
             this.start = 0;
 			this.end = 5;
-            for (var i = this.start; i <= this.end; i++) {
-            	console.log(i);
+            for (var i = this.start; i <= this.end; i++) {    
             	this.images.push(this.totalImages[i])
             }
         });
@@ -28,7 +25,6 @@ class RegisterFormController {
 		this.end += 5;
 	    for(let i = this.start+1; i <= this.end; i++) {
 	    	if (!!this.totalImages[i]) {
-	    		console.log(i)
 	      		this.images.push(this.totalImages[i]);
 	    	}
 	    }
